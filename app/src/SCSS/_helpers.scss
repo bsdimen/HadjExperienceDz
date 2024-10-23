@@ -1,0 +1,32 @@
+.container {
+    width: 90%;
+    max-width: 1200px;
+
+    @media (max-width: $small-screen) {
+        width: 100%;
+    }
+}
+
+.center-h {
+    display: flex;
+    justify-content: center
+}
+
+// Btns
+
+.btn-cta {
+    padding-inline: 80px;
+    padding-block: 12px;
+    background-color: $color-accent;
+    border-radius: 0 16px;
+    font-weight: 300;
+    font-size: 18px;
+    display: flex;
+    gap: 12px;
+    align-self: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: #fff;
+    cursor: pointer;
+
+}

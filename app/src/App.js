@@ -5,7 +5,7 @@ import ErrorBoundary from "./Components/errorBoundary"
 import RootLayout from "./Pages/RootLayout";
 import Home from "./Pages/Home";
 import { lazy, Suspense } from "react";
-
+import "./CSS/main.css";
 
 
 function App() {

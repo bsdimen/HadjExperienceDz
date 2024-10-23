@@ -1,0 +1,47 @@
+header {
+    padding-block: 10px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid $color-accent-light;
+
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+
+            .nav-link {
+                font-size: 18px;
+                font-weight: 300;
+
+                &.active {
+                    color: $color-primary;
+                }
+            }
+        }
+
+        .account-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+
+            .btn-link {
+                padding-block: 8px;
+                padding-inline: 16px;
+                border-radius: 0 16px;
+                border: 1px solid $color-primary;
+
+                &.signup {
+                    background-color: $color-primary;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
