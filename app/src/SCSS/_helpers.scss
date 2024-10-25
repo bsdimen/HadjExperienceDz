@@ -1,15 +1,48 @@
+// Reusable classes
+
 .container {
     width: 90%;
     max-width: 1200px;
-
-    @media (max-width: $small-screen) {
-        width: 100%;
-    }
 }
 
 .center-h {
     display: flex;
     justify-content: center
+}
+
+.main-heading {
+
+    font-weight: 300;
+    font-size: 32px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 16px;
+
+    &::after {
+        content: "";
+        background-color: $color-primary;
+        height: 2px;
+        width: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        bottom: 0;
+    }
+
+    &.right {
+        text-align: initial;
+
+        &::after {
+            transform: unset;
+            right: 0;
+        }
+    }
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    border-image: fill 1 linear-gradient(#076a3c9a, #076a3c9a);
 }
 
 // Btns
@@ -29,4 +62,10 @@
     color: #fff;
     cursor: pointer;
 
+}
+
+.btn-inline {
+    color: $color-primary;
+    text-align: center;
+    margin-top: 30px;
 }

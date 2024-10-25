@@ -1,8 +1,9 @@
 .home {
     .hero-section {
-        height: 95vh;
+        min-height: 95vh;
         max-height: fit-content;
         background-image: url("../Asstes/Imgs/hero-pattern.svg");
+        padding-block: 20px;
 
         .container {
             display: flex;
@@ -41,28 +42,9 @@
         }
     }
 
-    .regiteration-conditions {
-        padding-block: 50px;
+    .registeration-conditions {
 
-        h3 {
-            font-weight: 300;
-            font-size: 32px;
-            text-align: center;
-            position: relative;
-            padding-bottom: 16px;
-
-            &::after {
-                content: "";
-                background-color: $color-primary;
-                height: 2px;
-                width: 80px;
-                left: 50%;
-                transform: translateX(-50%);
-                position: absolute;
-                bottom: 0;
-
-            }
-        }
+        margin-block: 50px;
 
         .conditions {
             display: grid;
@@ -76,16 +58,14 @@
             }
 
             .condition {
-                height: 180px;
+                min-height: 180px;
                 padding-inline: 20px;
+                padding-block: 8px;
                 border: 1px solid $color-accent-light;
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
-                @media (max-width: $meduim-screen) {
-                    height: 120px;
-                }
 
                 p {
                     text-align: center;
@@ -111,6 +91,182 @@
                         }
                     }
 
+                }
+            }
+        }
+    }
+
+    .register-steps-section {
+        margin-block: 50px;
+
+        .register-steps-container {
+            display: flex;
+            gap: 40px;
+
+            @media (max-width: $meduim-screen) {
+                display: block;
+            }
+
+            .register-details {
+                h3 {
+                    margin-bottom: 30px;
+                }
+
+                p {
+                    width: 70%;
+                    margin-bottom: 15px;
+
+                    &.remark {
+                        color: #D62227;
+                    }
+                }
+
+                ul {
+                    padding-block: 8px;
+                    padding-inline: 16px;
+                    font-size: 20px;
+                    border: 1px solid $color-accent-light;
+                    background-color: #fff;
+                    width: 85%;
+                    position: relative;
+
+                    li {
+                        font-size: 16px;
+                        margin-top: 16px;
+                        margin-inline: 24px;
+                    }
+
+                    &::before {
+                        content: " ";
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                        width: 100%;
+                        height: 100%;
+                        border: 1px solid $color-primary;
+                        z-index: -1;
+
+                    }
+                }
+
+                @media (max-width: $meduim-screen) {
+                    margin-bottom: 40px;
+                }
+            }
+
+            .register-steps {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 28px;
+
+                .steps {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(3, 1fr);
+                    gap: 30px;
+
+                    @media (max-width: $small-screen) {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                    }
+
+                    .step {
+                        max-width: 375px;
+                        min-height: 100px;
+                        padding-inline: 36px;
+                        padding-block: 8px;
+                        display: flex;
+                        align-items: center;
+                        border: 1px solid $color-accent-light;
+                        position: relative;
+
+
+                        p {
+                            font-size: 16px;
+                        }
+
+                        &::before {
+                            content: attr(data-step);
+                            background-color: $color-accent-light-2;
+                            border: 1px solid $color-accent-light;
+                            color: $color-dark;
+                            font-size: 32px;
+                            width: 48px;
+                            height: 48px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: absolute;
+                            right: -24px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .hadj-guide-section {
+        padding-block: 50px;
+
+        .hadj-guides {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            .hadj-guide {
+                height: 400px;
+                position: relative;
+                margin-top: 28px;
+                cursor: pointer;
+                border-width: 10p;
+
+                span {
+                    position: absolute;
+                    right: 24px;
+                    top: 20px;
+                    padding-inline: 16px;
+                    padding-block: 8px;
+                    background-color: #fff;
+                    border-radius: 40px;
+                }
+
+                .main-img {
+                    object-fit: cover;
+                    width: 100%;
+                }
+
+                .hovered-icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, 50%);
+                    background-color: #fff;
+                    width: 54px;
+                    height: 54px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in;
+
+                    img {
+                        object-fit: unset;
+                        width: 70%;
+                    }
+                }
+
+                &:hover {
+                    .hovered-icon {
+                        opacity: 1;
+                    }
                 }
             }
         }
