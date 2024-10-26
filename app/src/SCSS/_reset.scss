@@ -4,17 +4,12 @@
     box-sizing: border-box;
 }
 
-html {
-    overflow-x: hidden;
-}
-
 body {
     direction: rtl;
     text-align: right;
     font-family: "Wahran";
     font-weight: 300;
     color: $color-dark;
-    overflow-x: hidden;
 }
 
 a {

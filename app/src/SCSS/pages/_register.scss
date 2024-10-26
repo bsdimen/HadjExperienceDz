@@ -1,0 +1,133 @@
+.register-page {
+    background-color: $color-accent-light-2;
+
+    .container {
+        position: relative;
+    }
+
+    .btn-back {
+        position: absolute;
+        right: 0;
+        top: 16px;
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        font-weight: 300;
+        padding-inline: 12px 10px;
+        padding-block: 5px;
+        color: $color-accent;
+        background-color: inherit;
+        border: 1px solid $color-accent;
+        height: fit-content;
+        width: fit-content;
+    }
+
+    .register-wrapper {
+        width: 80%;
+
+        .register-bar {
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            padding-block: 32px;
+
+            .bar {
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: $color-accent-light;
+            }
+
+            .step {
+                position: relative;
+                margin-top: 32px;
+                color: $color-accent-light;
+
+                &::before {
+                    content: attr(data-step);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    top: -260%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 32px;
+                    height: 32px;
+
+                    background-color: #fff;
+                    font-size: 20px;
+                    color: $color-accent-light;
+                    border: 2px solid $color-accent-light;
+                }
+
+            }
+        }
+
+        .register-info {
+            background-color: #fff;
+            padding-inline: 24px;
+            padding-block: 16px;
+
+            .input-section {
+                h3 {
+                    font-weight: 300;
+                    font-size: 20px;
+                    padding-block: 16px;
+                    border-bottom: 1px solid $color-accent-light-2;
+                }
+
+                .inputs {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 20px;
+                    width: 60%;
+                    padding-block: 16px;
+
+                    .genders {
+                        .radio-inputs {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-around;
+
+                            .single {
+                                display: flex;
+                                gap: 12px;
+
+                                input[type="radio"] {
+                                    width: 16px;
+                                    height: 16px;
+                                    border: none;
+                                    outline: none;
+                                    appearance: none;
+                                    -webkit-appearance: none;
+                                    border-radius: 50%;
+                                    border: 1px solid $color-accent-light;
+                                    position: relative;
+
+                                    &:checked {
+                                        border: 1px solid $color-accent;
+
+                                        &::before {
+                                            content: " ";
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 50%;
+                                            border-radius: 50%;
+                                            width: 10px;
+                                            height: 10px;
+                                            transform: translate(-50%, -50%);
+                                            background-color: $color-accent;
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

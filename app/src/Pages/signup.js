@@ -45,7 +45,7 @@ const Signup = () => {
                 <button className='btn-cta'>أنشئ حساب</button>
 
             </form>
-            <p> لديك حساب <Link to="./login">تسجيل الدخول</Link></p>
+            <p> لديك حساب <Link to="/login">تسجيل الدخول</Link></p>
         </div>
     );
 }

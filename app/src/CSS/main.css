@@ -14,17 +14,12 @@
   box-sizing: border-box;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 body {
   direction: rtl;
   text-align: right;
   font-family: "Wahran";
   font-weight: 300;
   color: #131008;
-  overflow-x: hidden;
 }
 
 a {
@@ -137,6 +132,13 @@ header .header-wrapper .account-actions .btn-link.signup {
   right: 0;
 }
 
+.fr {
+  direction: ltr;
+  text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+
 .overlay {
   width: 100%;
   height: 100%;
@@ -174,6 +176,7 @@ header .header-wrapper .account-actions .btn-link.signup {
   background-color: rgba(236, 235, 230, 0.4);
   background-image: url("../Asstes/Imgs/hero-pattern.svg");
   padding-block: 20px;
+  overflow: hidden;
 }
 .home .hero-section .container {
   display: flex;
@@ -204,7 +207,7 @@ header .header-wrapper .account-actions .btn-link.signup {
   font-weight: 300;
 }
 .home .registeration-conditions {
-  margin-block: 50px;
+  padding-block: 50px;
 }
 .home .registeration-conditions .conditions {
   display: grid;
@@ -249,7 +252,7 @@ header .header-wrapper .account-actions .btn-link.signup {
   vertical-align: middle;
 }
 .home .register-steps-section {
-  margin-block: 50px;
+  padding-block: 50px;
 }
 .home .register-steps-section .register-steps-container {
   display: flex;
@@ -423,6 +426,117 @@ header .header-wrapper .account-actions .btn-link.signup {
 }
 .auth-section p a {
   text-decoration: underline;
+}
+
+.register-page {
+  background-color: #ECEBE6;
+}
+.register-page .container {
+  position: relative;
+}
+.register-page .btn-back {
+  position: absolute;
+  right: 0;
+  top: 16px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-weight: 300;
+  padding-inline: 12px 10px;
+  padding-block: 5px;
+  color: #826B24;
+  background-color: inherit;
+  border: 1px solid #826B24;
+  height: fit-content;
+  width: fit-content;
+}
+.register-page .register-wrapper {
+  width: 80%;
+}
+.register-page .register-wrapper .register-bar {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  padding-block: 32px;
+}
+.register-page .register-wrapper .register-bar .bar {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #C2C0B2;
+}
+.register-page .register-wrapper .register-bar .step {
+  position: relative;
+  margin-top: 32px;
+  color: #C2C0B2;
+}
+.register-page .register-wrapper .register-bar .step::before {
+  content: attr(data-step);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -260%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  font-size: 20px;
+  color: #C2C0B2;
+  border: 2px solid #C2C0B2;
+}
+.register-page .register-wrapper .register-info {
+  background-color: #fff;
+  padding-inline: 24px;
+  padding-block: 16px;
+}
+.register-page .register-wrapper .register-info .input-section h3 {
+  font-weight: 300;
+  font-size: 20px;
+  padding-block: 16px;
+  border-bottom: 1px solid #ECEBE6;
+}
+.register-page .register-wrapper .register-info .input-section .inputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 60%;
+  padding-block: 16px;
+}
+.register-page .register-wrapper .register-info .input-section .inputs .genders .radio-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.register-page .register-wrapper .register-info .input-section .inputs .genders .radio-inputs .single {
+  display: flex;
+  gap: 12px;
+}
+.register-page .register-wrapper .register-info .input-section .inputs .genders .radio-inputs .single input[type=radio] {
+  width: 16px;
+  height: 16px;
+  border: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 50%;
+  border: 1px solid #C2C0B2;
+  position: relative;
+}
+.register-page .register-wrapper .register-info .input-section .inputs .genders .radio-inputs .single input[type=radio]:checked {
+  border: 1px solid #826B24;
+}
+.register-page .register-wrapper .register-info .input-section .inputs .genders .radio-inputs .single input[type=radio]:checked::before {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  background-color: #826B24;
 }
 
 /*# sourceMappingURL=main.css.map */

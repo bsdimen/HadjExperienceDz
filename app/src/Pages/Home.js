@@ -1,19 +1,48 @@
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect, forwardRef } from 'react';
 import leftIcon from "../Asstes/Icons/arrow-left.svg"
 import leftUpIcon from "../Asstes/Icons/left-small-up.svg"
 import { motion } from "framer-motion";
 import g_01 from "../Asstes/Imgs/g-01.jpg";
 import g_02 from "../Asstes/Imgs/g-02.jpg";
 import g_03 from "../Asstes/Imgs/g-03.jpg";
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 
 
 const Home = () => {
 
-    const param = useParams();
+    const registerConditionsRef = useRef();
+    const registerStepsRef = useRef();
+    const hadjGuideRef = useRef();
 
-    console.log(param)
+    const location = useLocation();
+
+    const scrollToSection = (section) => {
+        switch (section) {
+            case 'register-conditions':
+                if (registerConditionsRef.current) {
+                    registerConditionsRef.current.scrollIntoView({ behavior: 'smooth' });
+                }
+                break;
+            case 'register-steps':
+                if (registerStepsRef.current) {
+                    registerStepsRef.current.scrollIntoView({ behavior: 'smooth' });
+                }
+                break;
+            case 'hadj-guide':
+                if (hadjGuideRef.current) {
+                    hadjGuideRef.current.scrollIntoView({ behavior: 'smooth' });
+                }
+                break;
+            default:
+                break;
+        }
+    };
+
+    useEffect(() => {
+        const hash = location.hash.replace('#', '');
+        scrollToSection(hash)
+    }, [location]);
 
     return (
         <div className='home '>
@@ -29,14 +58,14 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <RegisterConditions />
-            <RegisterSteps />
-            <HadjGuide />
+            <RegisterConditions ref={registerConditionsRef} />
+            <RegisterSteps ref={registerStepsRef} />
+            <HadjGuide ref={hadjGuideRef} />
         </div>
     );
 }
 
-const RegisterConditions = () => {
+const RegisterConditions = forwardRef((props, ref) => {
     const conditions = ["التمتع بالجنسية الجزائرية.",
         "بلوغ سن تسعة عشر (19) سنة كاملة يوم التسجيل.",
         "عدم الحج خلال السبع (07) سنوات السابقة يبدأ إحتسابها من سنة 2018، بإستثناء المحرم لإمرأة لم يسبق لها الحج خلال السبع سنوات السابقة.",
@@ -48,7 +77,7 @@ const RegisterConditions = () => {
     const [isLinkHovered, setIsLinkHovered] = useState(false)
     const transition = { duration: 0.3, ease: "easeIn" }
 
-    return <div className='registeration-conditions center-h'>
+    return <div className='registeration-conditions center-h' ref={ref} id='register-conditions'>
         <div className='container'>
             <h3 className='main-heading'>شروط التسجيل</h3>
             <div className='conditions'>
@@ -69,10 +98,10 @@ const RegisterConditions = () => {
 
         </div>
     </div >
-}
+})
 
-const RegisterSteps = () => {
-    return <div className='register-steps-section center-h'>
+const RegisterSteps = forwardRef((props, ref) => {
+    return <div className='register-steps-section center-h' ref={ref} id="register-steps">
         <div className='container register-steps-container'>
             <div className='register-details'>
                 <h3 className='main-heading right'>طريقة التسجيل</h3>
@@ -115,9 +144,9 @@ const RegisterSteps = () => {
         </div>
     </div>
 }
-
-const HadjGuide = () => {
-    return <div className='hadj-guide-section center-h'>
+)
+const HadjGuide = forwardRef((props, ref) => {
+    return <div className='hadj-guide-section center-h' ref={ref} id="hadj-guide">
         <div className='container'>
             <div className='hadj-guide-heading'>
                 <h3 className='main-heading'>دليل الحاج</h3>
@@ -153,5 +182,5 @@ const HadjGuide = () => {
 
         </div>
     </div>
-}
+})
 export default Home;
