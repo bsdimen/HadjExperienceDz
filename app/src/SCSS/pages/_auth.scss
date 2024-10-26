@@ -1,0 +1,30 @@
+.auth-section {
+    min-height: 83vh;
+    max-height: fit-content;
+    background-color: rgba($color-accent-light-2, 0.4);
+    background-image: url("../Asstes/Imgs/hero-pattern.svg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 60px;
+
+    form {
+        width: fit-content;
+
+        button {
+            width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    p {
+        color: $color-primary;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+
+}

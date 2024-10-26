@@ -5,10 +5,15 @@ import { motion } from "framer-motion";
 import g_01 from "../Asstes/Imgs/g-01.jpg";
 import g_02 from "../Asstes/Imgs/g-02.jpg";
 import g_03 from "../Asstes/Imgs/g-03.jpg";
+import { useParams } from 'react-router-dom';
 
 
 
 const Home = () => {
+
+    const param = useParams();
+
+    console.log(param)
 
     return (
         <div className='home '>

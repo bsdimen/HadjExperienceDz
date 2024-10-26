@@ -8,14 +8,14 @@ const Header = () => {
             <div className='header-wrapper container'>
                 <img className="logo" src={logo} />
                 <nav>
-                    <Link to="/home" className='nav-link'>الرئيسية</Link>
-                    <Link to="" className='nav-link'>شروط التسجيل</Link>
-                    <Link to="" className='nav-link'>طريقة التسجيل</Link>
-                    <Link to="" className='nav-link'>دليل الحاج</Link>
+                    <Link to="/" className='nav-link'>الرئيسية</Link>
+                    <Link to="/:register-conditions" className='nav-link'>شروط التسجيل</Link>
+                    <Link to="/:register-steps" className='nav-link'>طريقة التسجيل</Link>
+                    <Link to="/:hasj-guide" className='nav-link'>دليل الحاج</Link>
                 </nav>
                 <div className='account-actions'>
-                    <Link to="" className='btn-link login'>تسجيل الدخول</Link>
-                    <Link to="" className='btn-link signup'> انشاء حساب</Link>
+                    <Link to="./login" className='btn-link login'>تسجيل الدخول</Link>
+                    <Link to="./signup" className='btn-link signup'> انشاء حساب</Link>
                 </div>
             </div>
 

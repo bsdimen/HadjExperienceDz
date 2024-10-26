@@ -78,6 +78,30 @@ header .header-wrapper .account-actions .btn-link.signup {
   color: #fff;
 }
 
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.input-field label {
+  font-size: 20px;
+  color: #131008;
+}
+.input-field input {
+  border: none;
+  font-size: 16px;
+  padding-block: 8px;
+  padding-inline: 16px;
+  border: 1px solid #C2C0B2;
+  border-radius: 4px;
+  width: 300px;
+}
+.input-field input:focus {
+  outline: none;
+  border: 1px solid #076A3B;
+}
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -134,6 +158,9 @@ header .header-wrapper .account-actions .btn-link.signup {
   color: #fff;
   cursor: pointer;
 }
+.btn-cta.green {
+  background-color: #076A3B;
+}
 
 .btn-inline {
   color: #076A3B;
@@ -144,6 +171,7 @@ header .header-wrapper .account-actions .btn-link.signup {
 .home .hero-section {
   min-height: 95vh;
   max-height: fit-content;
+  background-color: rgba(236, 235, 230, 0.4);
   background-image: url("../Asstes/Imgs/hero-pattern.svg");
   padding-block: 20px;
 }
@@ -370,6 +398,31 @@ header .header-wrapper .account-actions .btn-link.signup {
 }
 .home .hadj-guide-section .hadj-guides .hadj-guide:hover .hovered-icon {
   opacity: 1;
+}
+
+.auth-section {
+  min-height: 83vh;
+  max-height: fit-content;
+  background-color: rgba(236, 235, 230, 0.4);
+  background-image: url("../Asstes/Imgs/hero-pattern.svg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 60px;
+}
+.auth-section form {
+  width: fit-content;
+}
+.auth-section form button {
+  width: 100%;
+  margin-top: 40px;
+}
+.auth-section p {
+  color: #076A3B;
+}
+.auth-section p a {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=main.css.map */

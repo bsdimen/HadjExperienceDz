@@ -1,0 +1,3 @@
+@function color-light($hex-color, $opacity) {
+    @return rgba(red($hex-color), green($hex-color), blue($hex-color), $alpha);
+}

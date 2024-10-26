@@ -62,6 +62,10 @@
     color: #fff;
     cursor: pointer;
 
+    &.green {
+        background-color: $color-primary;
+    }
+
 }
 
 .btn-inline {

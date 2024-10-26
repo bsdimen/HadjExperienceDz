@@ -45,3 +45,30 @@ header {
         }
     }
 }
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    label {
+        font-size: 20px;
+        color: $color-dark;
+    }
+
+    input {
+        border: none;
+        font-size: 16px;
+        padding-block: 8px;
+        padding-inline: 16px;
+        border: 1px solid $color-accent-light;
+        border-radius: 4px;
+        width: 300px;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $color-primary;
+        }
+    }
+}
